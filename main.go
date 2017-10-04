@@ -25,6 +25,9 @@ func main() {
 }
 
 func fetchImap(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Cache-Control", "no-cache")
+
 	r.ParseForm()
 
 	user := r.Form.Get("user")
